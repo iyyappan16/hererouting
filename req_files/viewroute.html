@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/font.css">
+		<link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/message.css">
+		<link rel="stylesheet" type="text/css" href="css/routing.css" />
+		<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+		<style>
+			body{
+				  height: auto !important;
+				}
+		</style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="noCognitoMessage" class="configMessage" style="display: none;">
+            <div class="backdrop"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">No Cognito User Pool Configured</h3>
+                </div>
+                <div class="panel-body">
+                    <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+                </div>
+            </div>
+        </div>
+
+        <header style="padding:0px;">
+          <img src="images/logo.png">
+        </header>
+
+        <section id="sec1" class="form-wrap">
+            <h1 style="font-size:30x;margin-top:50px;">View Routes</h1>
+            <form id="viewrouteform">
+              <input type="text" id="waypoint0" value="40.7527,-73.9772" placeholder="12.9174,77.6228" pattern=".*" required>
+              <input type="text" id="waypoint1" value="40.7589,-73.9851" placeholder="11.6594,78.1518" pattern=".*" required>
+              <input type="text" id="mode" value="fastest;car;traffic:enabled" placeholder="fastest;car;traffic:enabled" required>
+			  <input type="text" id="departure" placeholder="now" value="now" placeholder="now" required>
+			  <input type="submit" value="View Route">
+            </form>
+        </section>
+		<section id="sec2" style="background-color:white;margin-top:20px;">	   
+		   <h1 style="color:black;font-size:26px;padding-top:15px;">Map with Driving Route from A to B</h1>
+		   <div id="map" style="width: 95%; height: 600px;"></div>
+        </section>
+		<footer class="site-footer">
+			<div class="row column">
+			  <nav class="footer-nav">
+				<ul>
+				  <li><a href="index.html">Home</a></li>
+				  <li><a href="unicorns.html">Meet the Unicorns</a></li>
+				  <li><a href="investors.html">Investors & Board of Directors</a></li>
+				  <li><a href="faq.html">FAQ</a></li>
+				  <li><a href="apply.html">Apply</a></li>
+				  <li><a href="viewroute.html">View Route</a></li>
+				</ul>
+			  </nav>
+			</div>
+
+			<div class="row column">
+			  <div class="footer-legal">
+				&copy;WildRydes Inc<br>
+				All Rights Reserved
+			  </div>
+			</div>
+	  </footer>
+        <script src="js/vendor/jquery-3.1.0.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+        <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/cognito-auth.js"></script>
+		 <script type="text/javascript" src='js/map.js'></script>
+    </body>
+</html>
